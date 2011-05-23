@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* SimplySolitaireAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* SimplySolitaireAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		2899E5220DE3E06400AC0155 /* SolitaireViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* SolitaireViewController.xib */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		28D7ACF80DDB3853001CB0EB /* SolitaireViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* SolitaireViewController.m */; };
+		DA361818138216EF00F80D7A /* DraggableCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA361817138216EF00F80D7A /* DraggableCardView.m */; };
+		DA8140D3137EF67C00E0E0EC /* card-1-1.png in Resources */ = {isa = PBXBuildFile; fileRef = DA81409F137EF67C00E0E0EC /* card-1-1.png */; };
+		DA8140D4137EF67C00E0E0EC /* card-1-2.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140A0137EF67C00E0E0EC /* card-1-2.png */; };
+		DA8140D5137EF67C00E0E0EC /* card-1-3.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140A1137EF67C00E0E0EC /* card-1-3.png */; };
+		DA8140D6137EF67C00E0E0EC /* card-1-4.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140A2137EF67C00E0E0EC /* card-1-4.png */; };
+		DA8140D7137EF67C00E0E0EC /* card-1-5.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140A3137EF67C00E0E0EC /* card-1-5.png */; };
+		DA8140D8137EF67C00E0E0EC /* card-1-6.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140A4137EF67C00E0E0EC /* card-1-6.png */; };
+		DA8140D9137EF67C00E0E0EC /* card-1-7.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140A5137EF67C00E0E0EC /* card-1-7.png */; };
+		DA8140DA137EF67C00E0E0EC /* card-1-8.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140A6137EF67C00E0E0EC /* card-1-8.png */; };
+		DA8140DB137EF67C00E0E0EC /* card-1-9.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140A7137EF67C00E0E0EC /* card-1-9.png */; };
+		DA8140DC137EF67C00E0E0EC /* card-1-10.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140A8137EF67C00E0E0EC /* card-1-10.png */; };
+		DA8140DD137EF67C00E0E0EC /* card-1-11.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140A9137EF67C00E0E0EC /* card-1-11.png */; };
+		DA8140DE137EF67C00E0E0EC /* card-1-12.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140AA137EF67C00E0E0EC /* card-1-12.png */; };
+		DA8140DF137EF67C00E0E0EC /* card-1-13.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140AB137EF67C00E0E0EC /* card-1-13.png */; };
+		DA8140E0137EF67C00E0E0EC /* card-2-1.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140AC137EF67C00E0E0EC /* card-2-1.png */; };
+		DA8140E1137EF67C00E0E0EC /* card-2-2.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140AD137EF67C00E0E0EC /* card-2-2.png */; };
+		DA8140E2137EF67C00E0E0EC /* card-2-3.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140AE137EF67C00E0E0EC /* card-2-3.png */; };
+		DA8140E3137EF67C00E0E0EC /* card-2-4.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140AF137EF67C00E0E0EC /* card-2-4.png */; };
+		DA8140E4137EF67C00E0E0EC /* card-2-5.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140B0137EF67C00E0E0EC /* card-2-5.png */; };
+		DA8140E5137EF67C00E0E0EC /* card-2-6.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140B1137EF67C00E0E0EC /* card-2-6.png */; };
+		DA8140E6137EF67C00E0E0EC /* card-2-7.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140B2137EF67C00E0E0EC /* card-2-7.png */; };
+		DA8140E7137EF67C00E0E0EC /* card-2-8.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140B3137EF67C00E0E0EC /* card-2-8.png */; };
+		DA8140E8137EF67C00E0E0EC /* card-2-9.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140B4137EF67C00E0E0EC /* card-2-9.png */; };
+		DA8140E9137EF67C00E0E0EC /* card-2-10.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140B5137EF67C00E0E0EC /* card-2-10.png */; };
+		DA8140EA137EF67C00E0E0EC /* card-2-11.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140B6137EF67C00E0E0EC /* card-2-11.png */; };
+		DA8140EB137EF67C00E0E0EC /* card-2-12.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140B7137EF67C00E0E0EC /* card-2-12.png */; };
+		DA8140EC137EF67C00E0E0EC /* card-2-13.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140B8137EF67C00E0E0EC /* card-2-13.png */; };
+		DA8140ED137EF67C00E0E0EC /* card-3-1.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140B9137EF67C00E0E0EC /* card-3-1.png */; };
+		DA8140EE137EF67C00E0E0EC /* card-3-2.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140BA137EF67C00E0E0EC /* card-3-2.png */; };
+		DA8140EF137EF67C00E0E0EC /* card-3-3.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140BB137EF67C00E0E0EC /* card-3-3.png */; };
+		DA8140F0137EF67C00E0E0EC /* card-3-4.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140BC137EF67C00E0E0EC /* card-3-4.png */; };
+		DA8140F1137EF67C00E0E0EC /* card-3-5.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140BD137EF67C00E0E0EC /* card-3-5.png */; };
+		DA8140F2137EF67C00E0E0EC /* card-3-6.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140BE137EF67C00E0E0EC /* card-3-6.png */; };
+		DA8140F3137EF67C00E0E0EC /* card-3-7.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140BF137EF67C00E0E0EC /* card-3-7.png */; };
+		DA8140F4137EF67C00E0E0EC /* card-3-8.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140C0137EF67C00E0E0EC /* card-3-8.png */; };
+		DA8140F5137EF67C00E0E0EC /* card-3-9.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140C1137EF67C00E0E0EC /* card-3-9.png */; };
+		DA8140F6137EF67C00E0E0EC /* card-3-10.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140C2137EF67C00E0E0EC /* card-3-10.png */; };
+		DA8140F7137EF67C00E0E0EC /* card-3-11.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140C3137EF67C00E0E0EC /* card-3-11.png */; };
+		DA8140F8137EF67C00E0E0EC /* card-3-12.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140C4137EF67C00E0E0EC /* card-3-12.png */; };
+		DA8140F9137EF67C00E0E0EC /* card-3-13.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140C5137EF67C00E0E0EC /* card-3-13.png */; };
+		DA8140FA137EF67C00E0E0EC /* card-4-1.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140C6137EF67C00E0E0EC /* card-4-1.png */; };
+		DA8140FB137EF67C00E0E0EC /* card-4-2.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140C7137EF67C00E0E0EC /* card-4-2.png */; };
+		DA8140FC137EF67C00E0E0EC /* card-4-3.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140C8137EF67C00E0E0EC /* card-4-3.png */; };
+		DA8140FD137EF67C00E0E0EC /* card-4-4.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140C9137EF67C00E0E0EC /* card-4-4.png */; };
+		DA8140FE137EF67C00E0E0EC /* card-4-5.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140CA137EF67C00E0E0EC /* card-4-5.png */; };
+		DA8140FF137EF67C00E0E0EC /* card-4-6.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140CB137EF67C00E0E0EC /* card-4-6.png */; };
+		DA814100137EF67C00E0E0EC /* card-4-7.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140CC137EF67C00E0E0EC /* card-4-7.png */; };
+		DA814101137EF67C00E0E0EC /* card-4-8.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140CD137EF67C00E0E0EC /* card-4-8.png */; };
+		DA814102137EF67C00E0E0EC /* card-4-9.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140CE137EF67C00E0E0EC /* card-4-9.png */; };
+		DA814103137EF67C00E0E0EC /* card-4-10.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140CF137EF67C00E0E0EC /* card-4-10.png */; };
+		DA814104137EF67C00E0E0EC /* card-4-11.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140D0137EF67C00E0E0EC /* card-4-11.png */; };
+		DA814105137EF67C00E0E0EC /* card-4-12.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140D1137EF67C00E0E0EC /* card-4-12.png */; };
+		DA814106137EF67C00E0E0EC /* card-4-13.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140D2137EF67C00E0E0EC /* card-4-13.png */; };
+		DA814109137EF70C00E0E0EC /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA814108137EF70C00E0E0EC /* CardView.m */; };
+		DA81410D137EF7BE00E0E0EC /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = DA81410C137EF7BE00E0E0EC /* Card.m */; };
+		DA81413B137EFEF200E0E0EC /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = DA81413A137EFEF200E0E0EC /* Deck.m */; };
+		DAF172211380596B009373DF /* SolitaireGame.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF172201380596B009373DF /* SolitaireGame.m */; };
+		DAF5A4371380D031001A2560 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF5A4361380D031001A2560 /* GameView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* SimplySolitaireAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplySolitaireAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* SimplySolitaireAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplySolitaireAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* SimplySolitaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimplySolitaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2899E5210DE3E06400AC0155 /* SolitaireViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SolitaireViewController.xib; sourceTree = "<group>"; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28D7ACF60DDB3853001CB0EB /* SolitaireViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolitaireViewController.h; sourceTree = "<group>"; };
+		28D7ACF70DDB3853001CB0EB /* SolitaireViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolitaireViewController.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* SimplySolitaire_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplySolitaire_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* SimplySolitaire-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SimplySolitaire-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		DA361816138216EF00F80D7A /* DraggableCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableCardView.h; sourceTree = "<group>"; };
+		DA361817138216EF00F80D7A /* DraggableCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableCardView.m; sourceTree = "<group>"; };
+		DA81409F137EF67C00E0E0EC /* card-1-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-1-1.png"; sourceTree = "<group>"; };
+		DA8140A0137EF67C00E0E0EC /* card-1-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-1-2.png"; sourceTree = "<group>"; };
+		DA8140A1137EF67C00E0E0EC /* card-1-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-1-3.png"; sourceTree = "<group>"; };
+		DA8140A2137EF67C00E0E0EC /* card-1-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-1-4.png"; sourceTree = "<group>"; };
+		DA8140A3137EF67C00E0E0EC /* card-1-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-1-5.png"; sourceTree = "<group>"; };
+		DA8140A4137EF67C00E0E0EC /* card-1-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-1-6.png"; sourceTree = "<group>"; };
+		DA8140A5137EF67C00E0E0EC /* card-1-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-1-7.png"; sourceTree = "<group>"; };
+		DA8140A6137EF67C00E0E0EC /* card-1-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-1-8.png"; sourceTree = "<group>"; };
+		DA8140A7137EF67C00E0E0EC /* card-1-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-1-9.png"; sourceTree = "<group>"; };
+		DA8140A8137EF67C00E0E0EC /* card-1-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-1-10.png"; sourceTree = "<group>"; };
+		DA8140A9137EF67C00E0E0EC /* card-1-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-1-11.png"; sourceTree = "<group>"; };
+		DA8140AA137EF67C00E0E0EC /* card-1-12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-1-12.png"; sourceTree = "<group>"; };
+		DA8140AB137EF67C00E0E0EC /* card-1-13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-1-13.png"; sourceTree = "<group>"; };
+		DA8140AC137EF67C00E0E0EC /* card-2-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-2-1.png"; sourceTree = "<group>"; };
+		DA8140AD137EF67C00E0E0EC /* card-2-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-2-2.png"; sourceTree = "<group>"; };
+		DA8140AE137EF67C00E0E0EC /* card-2-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-2-3.png"; sourceTree = "<group>"; };
+		DA8140AF137EF67C00E0E0EC /* card-2-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-2-4.png"; sourceTree = "<group>"; };
+		DA8140B0137EF67C00E0E0EC /* card-2-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-2-5.png"; sourceTree = "<group>"; };
+		DA8140B1137EF67C00E0E0EC /* card-2-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-2-6.png"; sourceTree = "<group>"; };
+		DA8140B2137EF67C00E0E0EC /* card-2-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-2-7.png"; sourceTree = "<group>"; };
+		DA8140B3137EF67C00E0E0EC /* card-2-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-2-8.png"; sourceTree = "<group>"; };
+		DA8140B4137EF67C00E0E0EC /* card-2-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-2-9.png"; sourceTree = "<group>"; };
+		DA8140B5137EF67C00E0E0EC /* card-2-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-2-10.png"; sourceTree = "<group>"; };
+		DA8140B6137EF67C00E0E0EC /* card-2-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-2-11.png"; sourceTree = "<group>"; };
+		DA8140B7137EF67C00E0E0EC /* card-2-12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-2-12.png"; sourceTree = "<group>"; };
+		DA8140B8137EF67C00E0E0EC /* card-2-13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-2-13.png"; sourceTree = "<group>"; };
+		DA8140B9137EF67C00E0E0EC /* card-3-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-3-1.png"; sourceTree = "<group>"; };
+		DA8140BA137EF67C00E0E0EC /* card-3-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-3-2.png"; sourceTree = "<group>"; };
+		DA8140BB137EF67C00E0E0EC /* card-3-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-3-3.png"; sourceTree = "<group>"; };
+		DA8140BC137EF67C00E0E0EC /* card-3-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-3-4.png"; sourceTree = "<group>"; };
+		DA8140BD137EF67C00E0E0EC /* card-3-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-3-5.png"; sourceTree = "<group>"; };
+		DA8140BE137EF67C00E0E0EC /* card-3-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-3-6.png"; sourceTree = "<group>"; };
+		DA8140BF137EF67C00E0E0EC /* card-3-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-3-7.png"; sourceTree = "<group>"; };
+		DA8140C0137EF67C00E0E0EC /* card-3-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-3-8.png"; sourceTree = "<group>"; };
+		DA8140C1137EF67C00E0E0EC /* card-3-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-3-9.png"; sourceTree = "<group>"; };
+		DA8140C2137EF67C00E0E0EC /* card-3-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-3-10.png"; sourceTree = "<group>"; };
+		DA8140C3137EF67C00E0E0EC /* card-3-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-3-11.png"; sourceTree = "<group>"; };
+		DA8140C4137EF67C00E0E0EC /* card-3-12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-3-12.png"; sourceTree = "<group>"; };
+		DA8140C5137EF67C00E0E0EC /* card-3-13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-3-13.png"; sourceTree = "<group>"; };
+		DA8140C6137EF67C00E0E0EC /* card-4-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-4-1.png"; sourceTree = "<group>"; };
+		DA8140C7137EF67C00E0E0EC /* card-4-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-4-2.png"; sourceTree = "<group>"; };
+		DA8140C8137EF67C00E0E0EC /* card-4-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-4-3.png"; sourceTree = "<group>"; };
+		DA8140C9137EF67C00E0E0EC /* card-4-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-4-4.png"; sourceTree = "<group>"; };
+		DA8140CA137EF67C00E0E0EC /* card-4-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-4-5.png"; sourceTree = "<group>"; };
+		DA8140CB137EF67C00E0E0EC /* card-4-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-4-6.png"; sourceTree = "<group>"; };
+		DA8140CC137EF67C00E0E0EC /* card-4-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-4-7.png"; sourceTree = "<group>"; };
+		DA8140CD137EF67C00E0E0EC /* card-4-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-4-8.png"; sourceTree = "<group>"; };
+		DA8140CE137EF67C00E0E0EC /* card-4-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-4-9.png"; sourceTree = "<group>"; };
+		DA8140CF137EF67C00E0E0EC /* card-4-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-4-10.png"; sourceTree = "<group>"; };
+		DA8140D0137EF67C00E0E0EC /* card-4-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-4-11.png"; sourceTree = "<group>"; };
+		DA8140D1137EF67C00E0E0EC /* card-4-12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-4-12.png"; sourceTree = "<group>"; };
+		DA8140D2137EF67C00E0E0EC /* card-4-13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-4-13.png"; sourceTree = "<group>"; };
+		DA814107137EF70C00E0E0EC /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
+		DA814108137EF70C00E0E0EC /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
+		DA81410B137EF7BE00E0E0EC /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		DA81410C137EF7BE00E0E0EC /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		DA814139137EFEF200E0E0EC /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
+		DA81413A137EFEF200E0E0EC /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
+		DAF1721F1380596B009373DF /* SolitaireGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolitaireGame.h; sourceTree = "<group>"; };
+		DAF172201380596B009373DF /* SolitaireGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolitaireGame.m; sourceTree = "<group>"; };
+		DAF5A4351380D031001A2560 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
+		DAF5A4361380D031001A2560 /* GameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623240D0F684500981E51 /* SimplySolitaireAppDelegate.h */,
+				1D3623250D0F684500981E51 /* SimplySolitaireAppDelegate.m */,
+				28D7ACF60DDB3853001CB0EB /* SolitaireViewController.h */,
+				28D7ACF70DDB3853001CB0EB /* SolitaireViewController.m */,
+				DA814107137EF70C00E0E0EC /* CardView.h */,
+				DA814108137EF70C00E0E0EC /* CardView.m */,
+				DA81410B137EF7BE00E0E0EC /* Card.h */,
+				DA81410C137EF7BE00E0E0EC /* Card.m */,
+				DA814139137EFEF200E0E0EC /* Deck.h */,
+				DA81413A137EFEF200E0E0EC /* Deck.m */,
+				DAF1721F1380596B009373DF /* SolitaireGame.h */,
+				DAF172201380596B009373DF /* SolitaireGame.m */,
+				DAF5A4351380D031001A2560 /* GameView.h */,
+				DAF5A4361380D031001A2560 /* GameView.m */,
+				DA361816138216EF00F80D7A /* DraggableCardView.h */,
+				DA361817138216EF00F80D7A /* DraggableCardView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* SimplySolitaire.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* SimplySolitaire_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DA381B8D137F694E0027D069 /* card */,
+				2899E5210DE3E06400AC0155 /* SolitaireViewController.xib */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* SimplySolitaire-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA381B8D137F694E0027D069 /* card */ = {
+			isa = PBXGroup;
+			children = (
+				DA81409F137EF67C00E0E0EC /* card-1-1.png */,
+				DA8140A0137EF67C00E0E0EC /* card-1-2.png */,
+				DA8140A1137EF67C00E0E0EC /* card-1-3.png */,
+				DA8140A2137EF67C00E0E0EC /* card-1-4.png */,
+				DA8140A3137EF67C00E0E0EC /* card-1-5.png */,
+				DA8140A4137EF67C00E0E0EC /* card-1-6.png */,
+				DA8140A5137EF67C00E0E0EC /* card-1-7.png */,
+				DA8140A6137EF67C00E0E0EC /* card-1-8.png */,
+				DA8140A7137EF67C00E0E0EC /* card-1-9.png */,
+				DA8140A8137EF67C00E0E0EC /* card-1-10.png */,
+				DA8140A9137EF67C00E0E0EC /* card-1-11.png */,
+				DA8140AA137EF67C00E0E0EC /* card-1-12.png */,
+				DA8140AB137EF67C00E0E0EC /* card-1-13.png */,
+				DA8140AC137EF67C00E0E0EC /* card-2-1.png */,
+				DA8140AD137EF67C00E0E0EC /* card-2-2.png */,
+				DA8140AE137EF67C00E0E0EC /* card-2-3.png */,
+				DA8140AF137EF67C00E0E0EC /* card-2-4.png */,
+				DA8140B0137EF67C00E0E0EC /* card-2-5.png */,
+				DA8140B1137EF67C00E0E0EC /* card-2-6.png */,
+				DA8140B2137EF67C00E0E0EC /* card-2-7.png */,
+				DA8140B3137EF67C00E0E0EC /* card-2-8.png */,
+				DA8140B4137EF67C00E0E0EC /* card-2-9.png */,
+				DA8140B5137EF67C00E0E0EC /* card-2-10.png */,
+				DA8140B6137EF67C00E0E0EC /* card-2-11.png */,
+				DA8140B7137EF67C00E0E0EC /* card-2-12.png */,
+				DA8140B8137EF67C00E0E0EC /* card-2-13.png */,
+				DA8140B9137EF67C00E0E0EC /* card-3-1.png */,
+				DA8140BA137EF67C00E0E0EC /* card-3-2.png */,
+				DA8140BB137EF67C00E0E0EC /* card-3-3.png */,
+				DA8140BC137EF67C00E0E0EC /* card-3-4.png */,
+				DA8140BD137EF67C00E0E0EC /* card-3-5.png */,
+				DA8140BE137EF67C00E0E0EC /* card-3-6.png */,
+				DA8140BF137EF67C00E0E0EC /* card-3-7.png */,
+				DA8140C0137EF67C00E0E0EC /* card-3-8.png */,
+				DA8140C1137EF67C00E0E0EC /* card-3-9.png */,
+				DA8140C2137EF67C00E0E0EC /* card-3-10.png */,
+				DA8140C3137EF67C00E0E0EC /* card-3-11.png */,
+				DA8140C4137EF67C00E0E0EC /* card-3-12.png */,
+				DA8140C5137EF67C00E0E0EC /* card-3-13.png */,
+				DA8140C6137EF67C00E0E0EC /* card-4-1.png */,
+				DA8140C7137EF67C00E0E0EC /* card-4-2.png */,
+				DA8140C8137EF67C00E0E0EC /* card-4-3.png */,
+				DA8140C9137EF67C00E0E0EC /* card-4-4.png */,
+				DA8140CA137EF67C00E0E0EC /* card-4-5.png */,
+				DA8140CB137EF67C00E0E0EC /* card-4-6.png */,
+				DA8140CC137EF67C00E0E0EC /* card-4-7.png */,
+				DA8140CD137EF67C00E0E0EC /* card-4-8.png */,
+				DA8140CE137EF67C00E0E0EC /* card-4-9.png */,
+				DA8140CF137EF67C00E0E0EC /* card-4-10.png */,
+				DA8140D0137EF67C00E0E0EC /* card-4-11.png */,
+				DA8140D1137EF67C00E0E0EC /* card-4-12.png */,
+				DA8140D2137EF67C00E0E0EC /* card-4-13.png */,
+			);
+			name = card;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* SimplySolitaire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "SimplySolitaire" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimplySolitaire;
+			productName = HelloCards;
+			productReference = 1D6058910D05DD3D006BFB54 /* SimplySolitaire.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SimplySolitaire" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* SimplySolitaire */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				2899E5220DE3E06400AC0155 /* SolitaireViewController.xib in Resources */,
+				DA8140D3137EF67C00E0E0EC /* card-1-1.png in Resources */,
+				DA8140D4137EF67C00E0E0EC /* card-1-2.png in Resources */,
+				DA8140D5137EF67C00E0E0EC /* card-1-3.png in Resources */,
+				DA8140D6137EF67C00E0E0EC /* card-1-4.png in Resources */,
+				DA8140D7137EF67C00E0E0EC /* card-1-5.png in Resources */,
+				DA8140D8137EF67C00E0E0EC /* card-1-6.png in Resources */,
+				DA8140D9137EF67C00E0E0EC /* card-1-7.png in Resources */,
+				DA8140DA137EF67C00E0E0EC /* card-1-8.png in Resources */,
+				DA8140DB137EF67C00E0E0EC /* card-1-9.png in Resources */,
+				DA8140DC137EF67C00E0E0EC /* card-1-10.png in Resources */,
+				DA8140DD137EF67C00E0E0EC /* card-1-11.png in Resources */,
+				DA8140DE137EF67C00E0E0EC /* card-1-12.png in Resources */,
+				DA8140DF137EF67C00E0E0EC /* card-1-13.png in Resources */,
+				DA8140E0137EF67C00E0E0EC /* card-2-1.png in Resources */,
+				DA8140E1137EF67C00E0E0EC /* card-2-2.png in Resources */,
+				DA8140E2137EF67C00E0E0EC /* card-2-3.png in Resources */,
+				DA8140E3137EF67C00E0E0EC /* card-2-4.png in Resources */,
+				DA8140E4137EF67C00E0E0EC /* card-2-5.png in Resources */,
+				DA8140E5137EF67C00E0E0EC /* card-2-6.png in Resources */,
+				DA8140E6137EF67C00E0E0EC /* card-2-7.png in Resources */,
+				DA8140E7137EF67C00E0E0EC /* card-2-8.png in Resources */,
+				DA8140E8137EF67C00E0E0EC /* card-2-9.png in Resources */,
+				DA8140E9137EF67C00E0E0EC /* card-2-10.png in Resources */,
+				DA8140EA137EF67C00E0E0EC /* card-2-11.png in Resources */,
+				DA8140EB137EF67C00E0E0EC /* card-2-12.png in Resources */,
+				DA8140EC137EF67C00E0E0EC /* card-2-13.png in Resources */,
+				DA8140ED137EF67C00E0E0EC /* card-3-1.png in Resources */,
+				DA8140EE137EF67C00E0E0EC /* card-3-2.png in Resources */,
+				DA8140EF137EF67C00E0E0EC /* card-3-3.png in Resources */,
+				DA8140F0137EF67C00E0E0EC /* card-3-4.png in Resources */,
+				DA8140F1137EF67C00E0E0EC /* card-3-5.png in Resources */,
+				DA8140F2137EF67C00E0E0EC /* card-3-6.png in Resources */,
+				DA8140F3137EF67C00E0E0EC /* card-3-7.png in Resources */,
+				DA8140F4137EF67C00E0E0EC /* card-3-8.png in Resources */,
+				DA8140F5137EF67C00E0E0EC /* card-3-9.png in Resources */,
+				DA8140F6137EF67C00E0E0EC /* card-3-10.png in Resources */,
+				DA8140F7137EF67C00E0E0EC /* card-3-11.png in Resources */,
+				DA8140F8137EF67C00E0E0EC /* card-3-12.png in Resources */,
+				DA8140F9137EF67C00E0E0EC /* card-3-13.png in Resources */,
+				DA8140FA137EF67C00E0E0EC /* card-4-1.png in Resources */,
+				DA8140FB137EF67C00E0E0EC /* card-4-2.png in Resources */,
+				DA8140FC137EF67C00E0E0EC /* card-4-3.png in Resources */,
+				DA8140FD137EF67C00E0E0EC /* card-4-4.png in Resources */,
+				DA8140FE137EF67C00E0E0EC /* card-4-5.png in Resources */,
+				DA8140FF137EF67C00E0E0EC /* card-4-6.png in Resources */,
+				DA814100137EF67C00E0E0EC /* card-4-7.png in Resources */,
+				DA814101137EF67C00E0E0EC /* card-4-8.png in Resources */,
+				DA814102137EF67C00E0E0EC /* card-4-9.png in Resources */,
+				DA814103137EF67C00E0E0EC /* card-4-10.png in Resources */,
+				DA814104137EF67C00E0E0EC /* card-4-11.png in Resources */,
+				DA814105137EF67C00E0E0EC /* card-4-12.png in Resources */,
+				DA814106137EF67C00E0E0EC /* card-4-13.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* SimplySolitaireAppDelegate.m in Sources */,
+				28D7ACF80DDB3853001CB0EB /* SolitaireViewController.m in Sources */,
+				DA814109137EF70C00E0E0EC /* CardView.m in Sources */,
+				DA81410D137EF7BE00E0E0EC /* Card.m in Sources */,
+				DA81413B137EFEF200E0E0EC /* Deck.m in Sources */,
+				DAF172211380596B009373DF /* SolitaireGame.m in Sources */,
+				DAF5A4371380D031001A2560 /* GameView.m in Sources */,
+				DA361818138216EF00F80D7A /* DraggableCardView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HelloCards_Prefix.pch;
+				INFOPLIST_FILE = "SimplySolitaire-Info.plist";
+				PRODUCT_NAME = HelloCards;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HelloCards_Prefix.pch;
+				INFOPLIST_FILE = "SimplySolitaire-Info.plist";
+				PRODUCT_NAME = HelloCards;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.2.1;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.2.1;
+			};
+			name = Release;
+		};
+		DA48377E137CCE940015EB4E /* Sim 2.2.1 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphonesimulator2.2.1;
+			};
+			name = "Sim 2.2.1";
+		};
+		DA48377F137CCE940015EB4E /* Sim 2.2.1 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SimplySolitaire_Prefix.pch;
+				INFOPLIST_FILE = "SimplySolitaire-Info.plist";
+				PRODUCT_NAME = SimplySolitaire;
+			};
+			name = "Sim 2.2.1";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "SimplySolitaire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				DA48377F137CCE940015EB4E /* Sim 2.2.1 */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SimplySolitaire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				DA48377E137CCE940015EB4E /* Sim 2.2.1 */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

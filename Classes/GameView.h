@@ -27,12 +27,11 @@
 	IBOutlet UILabel *timerLabel;
 	IBOutlet CardView *pile1Ctl, *pile2Ctl, *pile3Ctl, *pile4Ctl,
 					  *deckCtl, *dealtCardCtl;
-	CardView *draggingCard, *highlightedPile;
+	CardView *highlightedPile;
 }
 
 @property (nonatomic, retain) CardView *dealtCardCtl;
 @property (nonatomic, retain) CardView *deckCtl;
-@property (nonatomic, retain) CardView *draggingCard;
 
 - (void)highlightPile:(CardView*)pile;
 

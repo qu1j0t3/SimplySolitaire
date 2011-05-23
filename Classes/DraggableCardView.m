@@ -63,7 +63,6 @@
 - (void)resetDrag {
 	self.transform = CGAffineTransformIdentity;
 	self.alpha = 1;
-	gameView.draggingCard = nil;
 	[gameView highlightPile:nil];
 }
 
@@ -72,7 +71,6 @@
 
 	if(card != nil){
 		[self animateFirstTouchAt:[touch locationInView:gameView]];
-		gameView.draggingCard = gameView.dealtCardCtl;
 	}
 }
 
@@ -91,7 +89,7 @@
 	UITouch *touch = [touches anyObject];
 	CGPoint loc = [touch locationInView:gameView];
 	CardView *targetPile = [self hitPile:loc];
-	Card *dragCard = [[gameView draggingCard] card];
+	Card *dragCard = [self card];
 	
 	if(targetPile && [targetPile canDrop:dragCard]){
 		[targetPile setCard:dragCard];

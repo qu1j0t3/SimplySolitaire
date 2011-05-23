@@ -24,7 +24,6 @@
 
 @synthesize dealtCardCtl;
 @synthesize deckCtl;
-@synthesize draggingCard;
 
 /*
 - (id)initWithCoder:(NSCoder*)aDecoder {

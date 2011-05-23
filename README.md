@@ -5,6 +5,8 @@ Home page: <http://telegraphics.com.au/sw/product/SimplySolitaire> (coming soon)
 Compatibility: iOS 2.2.1 and later
 License: GPL v2
 
+Project file is compatible with Xcode 3.1.4.
+
 Card images obtained from <http://www.jfitz.com/cards/>
 Please refer to the copyright information on that page.
 

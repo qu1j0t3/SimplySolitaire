@@ -202,24 +202,24 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>DA4328781389E007002D1052</string>
+				<string>DA4328CE138A1EB1002D1052</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>DraggableCardView.h</string>
+				<string>GameView.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>DA4328791389E007002D1052</string>
+						<string>DA4328CF138A1EB1002D1052</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>DraggableCardView.h</string>
+						<string>GameView.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>DA4328891389F20F002D1052</string>
+						<string>DA4328DD138A1ED2002D1052</string>
 						<key>history</key>
 						<array>
-							<string>DA43285F1389DFF9002D1052</string>
+							<string>DA4328BF138A1E37002D1052</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -235,7 +235,7 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>15 108 813 670 0 0 1280 778 </string>
+				<string>304 95 813 670 0 0 1280 778 </string>
 			</dict>
 		</dict>
 		<dict>
@@ -256,10 +256,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>DA43288A1389F20F002D1052</string>
+						<string>DA4328DE138A1ED2002D1052</string>
 						<key>history</key>
 						<array>
-							<string>DA43285B1389DFBC002D1052</string>
+							<string>DA4328D3138A1EB1002D1052</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -296,10 +296,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>DA43288B1389F20F002D1052</string>
+						<string>DA4328DF138A1ED2002D1052</string>
 						<key>history</key>
 						<array>
-							<string>DA43285A1389DFB8002D1052</string>
+							<string>DA43289D138A127C002D1052</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -336,10 +336,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>DA43288C1389F20F002D1052</string>
+						<string>DA4328E0138A1ED2002D1052</string>
 						<key>history</key>
 						<array>
-							<string>DA4328591389DFB1002D1052</string>
+							<string>DA43289E138A127C002D1052</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -442,7 +442,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>4</integer>
+									<integer>15</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -483,7 +483,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SimplySolitaireAppDelegate.m</string>
+								<string>GameView.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -491,11 +491,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SimplySolitaireAppDelegate.m</string>
+										<string>GameView.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>DA4328881389F20F002D1052</string>
+										<string>DA4328DC138A1ED2002D1052</string>
 										<key>history</key>
 										<array>
 											<string>DA381A85137F5A7C0027D069</string>
@@ -505,7 +505,6 @@
 											<string>DAF5A3BD13809207001A2560</string>
 											<string>DA43220F1385F007002D1052</string>
 											<string>DA4324C4138607BC002D1052</string>
-											<string>DA43252E1388C13F002D1052</string>
 											<string>DA4325AC1388C63B002D1052</string>
 											<string>DA4325D313896894002D1052</string>
 											<string>DA43263713897507002D1052</string>
@@ -513,7 +512,6 @@
 											<string>DA4326B113897A1C002D1052</string>
 											<string>DA432757138996F1002D1052</string>
 											<string>DA43278213899B70002D1052</string>
-											<string>DA4327DD1389DA30002D1052</string>
 											<string>DA4327DE1389DA30002D1052</string>
 											<string>DA4328621389E007002D1052</string>
 											<string>DA4328631389E007002D1052</string>
@@ -521,7 +519,9 @@
 											<string>DA4328651389E007002D1052</string>
 											<string>DA4328661389E007002D1052</string>
 											<string>DA4328671389E007002D1052</string>
-											<string>DA4328681389E007002D1052</string>
+											<string>DA432896138A127C002D1052</string>
+											<string>DA4328C4138A1EB1002D1052</string>
+											<string>DA4328C5138A1EB1002D1052</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -548,17 +548,8 @@
 											<string>DA3618E013833EEA00F80D7A</string>
 											<string>DA4328021389DA7F002D1052</string>
 											<string>DA4328691389E007002D1052</string>
-											<string>DA43286A1389E007002D1052</string>
-											<string>DA43286B1389E007002D1052</string>
-											<string>DA43286C1389E007002D1052</string>
-											<string>DA43286D1389E007002D1052</string>
-											<string>DA43286E1389E007002D1052</string>
 											<string>DA43286F1389E007002D1052</string>
-											<string>DA4328701389E007002D1052</string>
-											<string>DA4328711389E007002D1052</string>
-											<string>DA4328721389E007002D1052</string>
-											<string>DA4328731389E007002D1052</string>
-											<string>DA4328741389E007002D1052</string>
+											<string>DA4328C6138A1EB1002D1052</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -616,9 +607,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>DA4328761389E007002D1052</string>
+				<string>DA4328AD138A1313002D1052</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>DA4328771389E007002D1052</string>
+				<string>DA4328AE138A1313002D1052</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -752,16 +743,17 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>DA43288D1389F20F002D1052</string>
-		<string>DA43288E1389F20F002D1052</string>
+		<string>DA4328CB138A1EB1002D1052</string>
+		<string>DA4328C8138A1EB1002D1052</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>DA483797137CE7D20015EB4E</string>
+		<string>DA4328781389E007002D1052</string>
 		<string>DA4328811389E007002D1052</string>
 		<string>DA43287E1389E007002D1052</string>
 		<string>DA43287B1389E007002D1052</string>
-		<string>DA4328781389E007002D1052</string>
-		<string>DA483797137CE7D20015EB4E</string>
 		<string>/Users/toby/Documents/SimplySolitaire/SimplySolitaire.xcodeproj</string>
+		<string>DA4328CE138A1EB1002D1052</string>
 	</array>
 	<key>WindowString</key>
 	<string>168 116 898 662 0 0 1280 778 </string>
@@ -785,7 +777,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DraggableCardView.h</string>
+								<string>DraggableCardView.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -843,7 +835,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>DA483797137CE7D20015EB4E</string>
-				<string>DA4328441389DD18002D1052</string>
+				<string>DA4328B3138A1313002D1052</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -854,7 +846,7 @@
 			<key>WindowToolGUID</key>
 			<string>DA483797137CE7D20015EB4E</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -963,13 +955,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>DA43282E1389DBE9002D1052</string>
+				<string>DA4328B4138A1313002D1052</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>DA43282F1389DBE9002D1052</string>
-				<string>DA4328301389DBE9002D1052</string>
-				<string>DA4328311389DBE9002D1052</string>
-				<string>DA4328321389DBE9002D1052</string>
-				<string>DA4328331389DBE9002D1052</string>
+				<string>DA4328B5138A1313002D1052</string>
+				<string>DA4328B6138A1313002D1052</string>
+				<string>DA4328B7138A1313002D1052</string>
+				<string>DA4328B8138A1313002D1052</string>
+				<string>DA4328B9138A1313002D1052</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -1131,7 +1123,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>DA4328841389E007002D1052</string>
+				<string>DA4328BA138A1313002D1052</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>

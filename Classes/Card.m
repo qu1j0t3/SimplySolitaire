@@ -43,12 +43,16 @@ static UIImage *backImage;
 - (int)value { return value; }
 
 + (void)drawImage:(UIImage*)image inRect:(CGRect)r {
+	// TODO: draw a shadow if being dragged
+	[image drawInRect:CGRectOffset([Card cardRectForWidth:CGRectGetWidth(r)],
+								   CGRectGetMinX(r), CGRectGetMinY(r))];
+}
+
++ (CGRect)cardRectForWidth:(float)w {
 	static float k = 96./71.; // proportions of card image
 
-	// TODO: draw a shadow if being dragged
 	// scale card height in proportion to width
-	[image drawInRect:CGRectMake(CGRectGetMinX(r), CGRectGetMinY(r),
-		CGRectGetWidth(r), k*CGRectGetWidth(r))];
+	return CGRectMake(0, 0, w, k*w);
 }
 
 - (void)drawInRect:(CGRect)rect {

@@ -216,38 +216,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">pile1Ctl</string>
-						<reference key="source" ref="774585933"/>
-						<reference key="destination" ref="238469276"/>
-					</object>
-					<int key="connectionID">59</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">pile2Ctl</string>
-						<reference key="source" ref="774585933"/>
-						<reference key="destination" ref="661919706"/>
-					</object>
-					<int key="connectionID">60</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">pile3Ctl</string>
-						<reference key="source" ref="774585933"/>
-						<reference key="destination" ref="154488500"/>
-					</object>
-					<int key="connectionID">61</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">pile4Ctl</string>
-						<reference key="source" ref="774585933"/>
-						<reference key="destination" ref="356294598"/>
-					</object>
-					<int key="connectionID">62</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">timerLabel</string>
 						<reference key="source" ref="774585933"/>
 						<reference key="destination" ref="1057885923"/>
@@ -261,38 +229,6 @@
 						<reference key="destination" ref="774585933"/>
 					</object>
 					<int key="connectionID">64</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">pile1Ctl</string>
-						<reference key="source" ref="31101144"/>
-						<reference key="destination" ref="238469276"/>
-					</object>
-					<int key="connectionID">67</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">pile2Ctl</string>
-						<reference key="source" ref="31101144"/>
-						<reference key="destination" ref="661919706"/>
-					</object>
-					<int key="connectionID">68</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">pile3Ctl</string>
-						<reference key="source" ref="31101144"/>
-						<reference key="destination" ref="154488500"/>
-					</object>
-					<int key="connectionID">69</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">pile4Ctl</string>
-						<reference key="source" ref="31101144"/>
-						<reference key="destination" ref="356294598"/>
-					</object>
-					<int key="connectionID">70</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -398,6 +334,62 @@
 						<reference key="destination" ref="271035274"/>
 					</object>
 					<int key="connectionID">118</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">stack1</string>
+						<reference key="source" ref="31101144"/>
+						<reference key="destination" ref="986469916"/>
+					</object>
+					<int key="connectionID">119</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">stack2</string>
+						<reference key="source" ref="31101144"/>
+						<reference key="destination" ref="644904274"/>
+					</object>
+					<int key="connectionID">120</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">stack3</string>
+						<reference key="source" ref="31101144"/>
+						<reference key="destination" ref="19587534"/>
+					</object>
+					<int key="connectionID">121</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">stack4</string>
+						<reference key="source" ref="31101144"/>
+						<reference key="destination" ref="1041454441"/>
+					</object>
+					<int key="connectionID">122</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">stack5</string>
+						<reference key="source" ref="31101144"/>
+						<reference key="destination" ref="558855460"/>
+					</object>
+					<int key="connectionID">123</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">stack6</string>
+						<reference key="source" ref="31101144"/>
+						<reference key="destination" ref="306388565"/>
+					</object>
+					<int key="connectionID">124</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">stack7</string>
+						<reference key="source" ref="31101144"/>
+						<reference key="destination" ref="271035274"/>
+					</object>
+					<int key="connectionID">125</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -568,13 +560,13 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>RowStackView</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>CardView</string>
+					<string>SuitStackView</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>CardView</string>
+					<string>SuitStackView</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>CardView</string>
+					<string>SuitStackView</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>CardView</string>
+					<string>SuitStackView</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>CardFaceDownView</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -611,7 +603,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">118</int>
+			<int key="maxID">125</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -653,6 +645,13 @@
 							<string>pile2Ctl</string>
 							<string>pile3Ctl</string>
 							<string>pile4Ctl</string>
+							<string>stack1</string>
+							<string>stack2</string>
+							<string>stack3</string>
+							<string>stack4</string>
+							<string>stack5</string>
+							<string>stack6</string>
+							<string>stack7</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -662,6 +661,13 @@
 							<string>CardView</string>
 							<string>CardView</string>
 							<string>CardView</string>
+							<string>RowStackView</string>
+							<string>RowStackView</string>
+							<string>RowStackView</string>
+							<string>RowStackView</string>
+							<string>RowStackView</string>
+							<string>RowStackView</string>
+							<string>RowStackView</string>
 						</object>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -702,7 +708,7 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">RowStackView</string>
-					<string key="superclassName">UIView</string>
+					<string key="superclassName">StackView</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">Classes/RowStackView.h</string>
@@ -747,6 +753,22 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">Classes/SolitaireViewController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">StackView</string>
+					<string key="superclassName">UIView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">Classes/StackView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">SuitStackView</string>
+					<string key="superclassName">StackView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">Classes/SuitStackView.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

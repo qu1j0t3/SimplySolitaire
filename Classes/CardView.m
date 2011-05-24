@@ -30,14 +30,6 @@
 	[self setNeedsDisplay];
 }
 
-- (bool)canDrop:(Card*)newCard {
-	//return true;
-	if(card)
-		return newCard.suit == card.suit && newCard.value == card.value + 1;
-	else
-		return newCard.value == 1;
-}
-
 - (void)setCard:(Card*)newCard dealtFrom:(CardView*)pack {
 	// set up an animation to reveal the new card as if it's being turned up from the facedown deck
 

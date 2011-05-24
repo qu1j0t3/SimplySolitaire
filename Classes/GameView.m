@@ -32,16 +32,12 @@
 	return self;
 }*/
 
-- (CGRect)highlightRectOf:pile {
-	return CGRectInset([pile frame], -6, -6);
-}
-
-- (void)highlightPile:(CardView*)pile {
+- (void)highlightPile:(StackView*)pile {
 	if(pile != highlightedPile){
 		if(highlightedPile)
-			[self setNeedsDisplayInRect:[self highlightRectOf:highlightedPile]];
+			[self setNeedsDisplayInRect:[highlightedPile highlightRect]];
 		if(pile)
-			[self setNeedsDisplayInRect:[self highlightRectOf:pile]];
+			[self setNeedsDisplayInRect:[pile highlightRect]];
 		highlightedPile = pile;
 	}
 }
@@ -49,7 +45,9 @@
 - (void)drawRect:(CGRect)rect {
 	[super drawRect:rect];
 
-	if(highlightedPile && CGRectIntersectsRect(rect, [self highlightRectOf:highlightedPile])){
+	if(highlightedPile
+	   && CGRectIntersectsRect(rect, [highlightedPile highlightRect]))
+	{
 		/*CGSize offset = CGSizeMake(0, 0);
 		float white = {1, 1, 1, .4};
 		CGColorRef colRef;
@@ -59,10 +57,10 @@
 		colSpaceRef = CGColorSpaceCreateDeviceRGB();
 		colRef = CGColorCreate(colSpaceRef, white);
 		CGContextSetShadowWithColor(ctx, offset, 5, colRef);*/
-		CGRect r = CGRectInset([self highlightRectOf:highlightedPile], 3, 3);
+		CGRect r = CGRectInset([highlightedPile highlightRect], 3, 3);
 		
 		CGContextRef ctx = UIGraphicsGetCurrentContext();
-		CGContextSetRGBStrokeColor(ctx, 1, 1, 1, .5);
+		CGContextSetRGBStrokeColor(ctx, 1, 1, 1, 1);
 		CGContextStrokeRectWithWidth(ctx, r, 3.0);
 	}
 }

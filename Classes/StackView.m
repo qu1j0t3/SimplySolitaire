@@ -16,24 +16,12 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-//  Created by Toby Thain on 5/15/11.
+//  Created by Toby Thain on 5/23/11.
 
-#import <Foundation/Foundation.h>
-
-#import "CardView.h"
-#import "SolitaireGame.h"
 #import "StackView.h"
 
-@interface GameView : UIView {
-	IBOutlet UILabel *timerLabel;
-	IBOutlet CardView *pile1Ctl, *pile2Ctl, *pile3Ctl, *pile4Ctl,
-					  *deckCtl, *dealtCardCtl;
-	StackView *highlightedPile;
-}
 
-@property (nonatomic, retain) CardView *dealtCardCtl;
-@property (nonatomic, retain) CardView *deckCtl;
+@implementation StackView
 
-- (void)highlightPile:(StackView*)pile;
 
 @end

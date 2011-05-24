@@ -31,6 +31,7 @@
 - (int)value;
 - (void)drawInRect:(CGRect)r;
 
++ (CGRect)cardRectForWidth:(float)w;
 + (void)drawFaceDownInRect:(CGRect)r;
 + (id)withSuit:(int)suit value:(int)value;
 

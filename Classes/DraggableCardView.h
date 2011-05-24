@@ -21,15 +21,17 @@
 #import <Foundation/Foundation.h>
 
 #import "SolitaireViewController.h"
+#import "SuitStackView.h"
 
 @class GameView;
 
 @interface DraggableCardView : CardView {
-	IBOutlet CardView *pile1Ctl, *pile2Ctl, *pile3Ctl, *pile4Ctl;
+	IBOutlet SuitStackView *pile1Ctl, *pile2Ctl, *pile3Ctl, *pile4Ctl;
+	IBOutlet RowStackView *stack1, *stack2, *stack3, *stack4, *stack5, *stack6, *stack7;
 	IBOutlet GameView *gameView;
 	IBOutlet SolitaireViewController *mainCtlr;
 	// set after a successful drag; used by drop animation completion method
-	CardView *targetPile;
+	StackView *targetPile;
 	Card *dragCard;
 }
 

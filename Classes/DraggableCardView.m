@@ -31,15 +31,18 @@
     return self;
 }*/
 
-- (CardView*)hitPile:(CGPoint)loc {
-	if(CGRectContainsPoint(pile1Ctl.frame, loc))
-		return pile1Ctl;
-	else if(CGRectContainsPoint(pile2Ctl.frame, loc))
-		return pile2Ctl;
-	else if(CGRectContainsPoint(pile3Ctl.frame, loc))
-		return pile3Ctl;
-	else if(CGRectContainsPoint(pile4Ctl.frame, loc))
-		return pile4Ctl;
+- (StackView*)hitPile:(CGPoint)loc {
+	if(CGRectContainsPoint(pile1Ctl.frame, loc)) return pile1Ctl;
+	else if(CGRectContainsPoint(pile2Ctl.frame, loc)) return pile2Ctl;
+	else if(CGRectContainsPoint(pile3Ctl.frame, loc)) return pile3Ctl;
+	else if(CGRectContainsPoint(pile4Ctl.frame, loc)) return pile4Ctl;
+	else if(CGRectContainsPoint(stack1.frame, loc)) return stack1;
+	else if(CGRectContainsPoint(stack2.frame, loc)) return stack2;
+	else if(CGRectContainsPoint(stack3.frame, loc)) return stack3;
+	else if(CGRectContainsPoint(stack4.frame, loc)) return stack4;
+	else if(CGRectContainsPoint(stack5.frame, loc)) return stack5;
+	else if(CGRectContainsPoint(stack6.frame, loc)) return stack6;
+	else if(CGRectContainsPoint(stack7.frame, loc)) return stack7;
 	return nil;
 }
 
@@ -60,8 +63,8 @@
     [UIView commitAnimations];
 }
 
-- (void)dropCard:(Card*)c on:(CardView*)pile {
-	[pile setCard:c];
+- (void)dropCard:(Card*)c on:(StackView*)pile {
+	[pile dropCard:c];
 	[mainCtlr dealCard:self];
 }	
 /*
@@ -101,7 +104,7 @@
 - (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)evt {
 	UITouch *touch = [touches anyObject];
 	CGPoint loc = [touch locationInView:gameView];
-	CardView *target = [self hitPile:loc];
+	StackView *target = [self hitPile:loc];
 
 	self.transform = [self makeTransform:loc];
 	if(target && ![target canDrop:card])
@@ -116,6 +119,7 @@
 	dragCard = [self card];
 	
 	if(targetPile && [targetPile canDrop:dragCard]){
+		[gameView highlightPile:nil]; // reset here, because in row stacks, rectangle changes when card added
 		[self dropCard:dragCard on:targetPile];
 		//[self animateDropAt:[touch locationInView:gameView]];
 	}

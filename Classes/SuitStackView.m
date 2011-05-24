@@ -16,24 +16,31 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-//  Created by Toby Thain on 5/15/11.
+//  Created by Toby Thain on 5/23/11.
 
-#import <Foundation/Foundation.h>
+#import "SuitStackView.h"
 
-#import "CardView.h"
-#import "SolitaireGame.h"
-#import "StackView.h"
+@implementation SuitStackView
 
-@interface GameView : UIView {
-	IBOutlet UILabel *timerLabel;
-	IBOutlet CardView *pile1Ctl, *pile2Ctl, *pile3Ctl, *pile4Ctl,
-					  *deckCtl, *dealtCardCtl;
-	StackView *highlightedPile;
+- (void)drawRect:(CGRect)rect {
+    if(cardShown)
+		[cardShown drawInRect:rect];
 }
 
-@property (nonatomic, retain) CardView *dealtCardCtl;
-@property (nonatomic, retain) CardView *deckCtl;
+- (CGRect)highlightRect {
+	return CGRectInset([self frame], -6, -6);
+}
 
-- (void)highlightPile:(StackView*)pile;
+- (bool)canDrop:(Card*)card {
+	if(cardShown)
+		return card.suit == cardShown.suit && card.value == cardShown.value + 1;
+	else
+		return card.value == 1;
+}
+
+- (void)dropCard:(Card*)card {
+	cardShown = card;
+	[self setNeedsDisplay];
+}
 
 @end

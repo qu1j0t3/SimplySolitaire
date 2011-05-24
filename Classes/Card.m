@@ -23,26 +23,18 @@
 @implementation Card
 
 static Card *deck[4][13];
-
-/* not sure if this is needed
-+ (void)initialize
-{
-	int s, v;
-	for(s = 0; s < 4; ++s)
-		for(v = 0; v < 13; ++v)
-			deck[s][v] = nil;
-}*/
+static UIImage *backImage;
 
 - (id)initWithSuit:(int)s value:(int)v
 {
 	if(s < 1 || s > 4 || v < 1 || v > 13)
 		return nil;
 
-	self = [super init];
-	suit = s;
-	value = v;
-	image = [UIImage imageNamed:
-				[NSString stringWithFormat:@"card-%d-%d.png", suit, value]];
+	if(self = [super init]){
+		suit = s;
+		value = v;
+		image = [UIImage imageNamed: [NSString stringWithFormat:@"card-%d-%d.png", suit, value]];
+	}
 	return self;
 }	
 
@@ -50,18 +42,31 @@ static Card *deck[4][13];
 - (int)suit { return suit; }
 - (int)value { return value; }
 
++ (void)drawImage:(UIImage*)image inRect:(CGRect)r {
+	static float k = 96./71.; // proportions of card image
+
+	// TODO: draw a shadow if being dragged
+	// scale card height in proportion to width
+	[image drawInRect:CGRectMake(CGRectGetMinX(r), CGRectGetMinY(r),
+		CGRectGetWidth(r), k*CGRectGetWidth(r))];
+}
+
+- (void)drawInRect:(CGRect)rect {
+	[Card drawImage:[self image] inRect:rect];
+}
 
 // this class method ensures that cards come from a fixed pool of 52.
-+ (id)withSuit:(int)suit value:(int)value
-{
++ (id)withSuit:(int)suit value:(int)value {
 	if(deck[suit-1][value-1] == nil)
 		deck[suit-1][value-1] = [[Card alloc] initWithSuit:suit value:value];
 	
 	return deck[suit-1][value-1];
 }
 
-- (void)drawInRect:(CGRect)r {
-	[[self image] drawInRect:r];
++ (void)drawFaceDownInRect:(CGRect)r {
+	if(backImage == nil)
+		backImage = [UIImage imageNamed:@"back.png"];
+	[self drawImage:backImage inRect:r];
 }
 
 @end

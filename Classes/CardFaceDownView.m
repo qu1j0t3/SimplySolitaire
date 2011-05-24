@@ -16,21 +16,14 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-//  Created by Toby Thain on 5/16/11.
+//  Created by Toby Thain on 5/23/11.
 
-#import <Foundation/Foundation.h>
+#import "CardFaceDownView.h"
 
-#import "SolitaireViewController.h"
+@implementation CardFaceDownView
 
-@class GameView;
-
-@interface DraggableCardView : CardView {
-	IBOutlet CardView *pile1Ctl, *pile2Ctl, *pile3Ctl, *pile4Ctl;
-	IBOutlet GameView *gameView;
-	IBOutlet SolitaireViewController *mainCtlr;
-	// set after a successful drag; used by drop animation completion method
-	CardView *targetPile;
-	Card *dragCard;
+- (void)drawRect:(CGRect)rect {
+    [Card drawFaceDownInRect:rect];
 }
 
 @end

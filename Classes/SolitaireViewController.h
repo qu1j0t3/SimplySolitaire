@@ -22,6 +22,7 @@
 
 #import "CardView.h"
 #import "Deck.h"
+#import "RowStackView.h"
 
 @class SolitaireGame;
 
@@ -29,6 +30,8 @@
 	SolitaireGame *game;
 	IBOutlet CardView *deckCtl, *dealtCardCtl;
 	IBOutlet UILabel *timerLabel;
+	IBOutlet RowStackView *stack1, *stack2, *stack3, *stack4, *stack5, *stack6, *stack7;
+	RowStackView *stacks[7];
 }
 
 - (IBAction)dealCard:(id)sender;

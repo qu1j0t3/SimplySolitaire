@@ -41,15 +41,37 @@
 		[NSString stringWithFormat:@"%d", [[game gameDeck] cards]]];
 }
 
+- (void)startGame {
+	int i, j;
+
+	game = [[SolitaireGame alloc] init];
+	[game start];
+	[self dealCard:nil];
+	
+	for(i = 0; i < 7; ++i){
+		for(j = i; j--;)
+			[[stacks[i] faceDownDeck] addCard:[game dealCard]];
+		[stacks[i] addFaceUpCard:[game dealCard]];
+		[stacks[i] setNeedsDisplay];
+	}
+}
+
+- (Card*)takeDealt {
+	return [game takeDealt];
+}
+
 /*
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
-}
+}*/
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	stacks[0] = stack1; stacks[1] = stack2; stacks[2] = stack3;
+	stacks[3] = stack4; stacks[4] = stack5; stacks[5] = stack6;
+	stacks[6] = stack7;
 }
-
+/*
 - (void)viewDidUnload {
  // Release any retained subviews of the main view.
  // e.g. self.myOutlet = nil;
@@ -59,16 +81,6 @@
 	if(game) [game release];
 
 	[super dealloc];
-}
-
-- (void)startGame {
-	game = [[SolitaireGame alloc] init];
-	[game start];
-	[self dealCard:nil];
-}
-
-- (Card*)takeDealt {
-	return [game takeDealt];
 }
 
 // Override to allow orientations other than the default portrait orientation.

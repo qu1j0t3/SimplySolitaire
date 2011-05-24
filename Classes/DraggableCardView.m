@@ -44,21 +44,45 @@
 }
 
 - (CGAffineTransform)makeTransform:(CGPoint)touchPoint {
-	return CGAffineTransformMake(1.4, 0, 0, 1.4, touchPoint.x-self.center.x, 
-												 touchPoint.y-self.center.y);
+	return CGAffineTransformMake(1.4, 0, 0, 1.4,
+								 touchPoint.x - self.center.x, 
+								 touchPoint.y - self.center.y);
 }
 
 - (void)animateFirstTouchAt:(CGPoint)touchPoint {
     NSValue *touchPointValue = [[NSValue valueWithCGPoint:touchPoint] retain];
-
+	
     [UIView beginAnimations:nil context:touchPointValue];
     [UIView setAnimationDuration:0.2];
     [UIView setAnimationDelegate:self];
-    //[UIView setAnimationDidStopSelector:@selector(growAnimationDidStop:finished:context:)];
     self.transform = [self makeTransform:touchPoint];
 	self.alpha = 0.66;
     [UIView commitAnimations];
 }
+
+- (void)dropCard:(Card*)c on:(CardView*)pile {
+	[pile setCard:c];
+	[mainCtlr dealCard:self];
+}	
+/*
+- (void)animDidStop:(NSString*)animId finished:(NSNumber*)fin context:(void*)ctx {
+	[self dropCard:dragCard on:targ];
+}
+
+- (void)animateDropAt:(CGPoint)touchPoint {
+    NSValue *touchPointValue = [[NSValue valueWithCGPoint:touchPoint] retain];
+	
+    [UIView beginAnimations:nil context:touchPointValue];
+    [UIView setAnimationDuration:1.2];
+    [UIView setAnimationDelegate:self];
+	[UIView setAnimationDidStopSelector:@selector(animDidStop:finished:context:)];
+// FIXME: this transform isn't right
+    self.transform = CGAffineTransformMake(1, 0, 0, 1,
+										   targetPile.center.x - touchPoint.x, 
+										   targetPile.center.y - touchPoint.y);
+	self.alpha = 1;
+    [UIView commitAnimations];
+}*/
 
 - (void)resetDrag {
 	self.transform = CGAffineTransformIdentity;
@@ -77,23 +101,23 @@
 - (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)evt {
 	UITouch *touch = [touches anyObject];
 	CGPoint loc = [touch locationInView:gameView];
-	CardView *targetPile = [self hitPile:loc];
+	CardView *target = [self hitPile:loc];
 
 	self.transform = [self makeTransform:loc];
-	if(targetPile && ![targetPile canDrop:card])
-		targetPile = nil;
-	[gameView highlightPile:targetPile];
+	if(target && ![target canDrop:card])
+		target = nil;
+	[gameView highlightPile:target];
 }
 
 - (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)evt {
 	UITouch *touch = [touches anyObject];
 	CGPoint loc = [touch locationInView:gameView];
-	CardView *targetPile = [self hitPile:loc];
-	Card *dragCard = [self card];
+	targetPile = [self hitPile:loc];
+	dragCard = [self card];
 	
 	if(targetPile && [targetPile canDrop:dragCard]){
-		[targetPile setCard:dragCard];
-		[mainCtlr dealCard:self];
+		[self dropCard:dragCard on:targetPile];
+		//[self animateDropAt:[touch locationInView:gameView]];
 	}
 
 	[self resetDrag];

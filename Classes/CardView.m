@@ -31,7 +31,7 @@
 }
 
 - (bool)canDrop:(Card*)newCard {
-//	return true;
+	//return true;
 	if(card)
 		return newCard.suit == card.suit && newCard.value == card.value + 1;
 	else
@@ -39,34 +39,29 @@
 }
 
 - (void)setCard:(Card*)newCard dealtFrom:(CardView*)pack {
+	// set up an animation to reveal the new card as if it's being turned up from the facedown deck
+
 	self.alpha = 0; // avoid flashing the un-transformed card at its original location
+	[self setCard:newCard];
+
 	self.transform = CGAffineTransformIdentity; // so we can get the correct frame
 	self.transform = CGAffineTransformMake(
 			.01, 0, 0, 1,
 			(CGRectGetMaxX([pack frame]) - CGRectGetMidX([self frame])), 
 			0);
-	[self setCard:newCard];
 	self.alpha = 1;
 
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:.33];
 	[UIView setAnimationDelegate:self];
-	//[UIView setAnimationDidStopSelector:@selector(growAnimationDidStop:finished:context:)];
 	self.transform = CGAffineTransformIdentity;
 	[UIView commitAnimations];
 }
 
-/*
-- (id)initWithCoder:(NSCoder*)coder {
-    if (self = [super initWithCoder:coder]) {
-        // Initialization
-		card = nil;
-    }
-    return self;
-}*/
-
 - (void)drawRect:(CGRect)rect {
     if(card){
+		// TODO: draw a shadow if being dragged
+		// scale card height in proportion to width
 		[card drawInRect:rect];
 	}
 	/*else{
@@ -80,25 +75,7 @@
 		CGContextAddRect(ctx, r);
 		//CGContextSetStrokeColor(ctx, strokeColour);
 		CGContextDrawPath(ctx, kCGPathStroke);
-	}
-	
-	if(blocked){
-		// highlight that this isn't a valid place to drop a card
-		CGContextRef ctx = UIGraphicsGetCurrentContext();
-		CGFloat midX = CGRectGetMidX(rect), midY = CGRectGetMidY(rect);
-		
-		CGContextBeginPath(ctx);
-		CGContextMoveToPoint(ctx, midX-10, midY-10);
-		CGContextAddLineToPoint(ctx, midX+10, midY+10);
-		CGContextMoveToPoint(ctx, midX-10, midY+10);
-		CGContextAddLineToPoint(ctx, midX+10, midY-10);
-
-		CGContextSetLineCap(ctx, kCGLineCapRound);
-		CGContextSetLineWidth(ctx, 5.0);
-		CGContextSetRGBStrokeColor(ctx, 1, 0, 0, 1);
-		CGContextDrawPath(ctx, kCGPathStroke);
 	}*/
 }
-
 
 @end

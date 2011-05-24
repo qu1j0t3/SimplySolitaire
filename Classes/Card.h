@@ -31,6 +31,7 @@
 - (int)value;
 - (void)drawInRect:(CGRect)r;
 
++ (void)drawFaceDownInRect:(CGRect)r;
 + (id)withSuit:(int)suit value:(int)value;
 
 @end

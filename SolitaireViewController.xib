@@ -184,6 +184,29 @@
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 					</object>
+					<object class="IBUILabel" id="930347220">
+						<reference key="NSNextResponder" ref="774585933"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{87, 99}, {305, 21}}</string>
+						<reference key="NSSuperview" ref="774585933"/>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="IBUIText">This is alpha code and not yet playable.</string>
+						<object class="NSFont" key="IBUIFont">
+							<string key="NSName">Helvetica-Oblique</string>
+							<double key="NSSize">1.100000e+01</double>
+							<int key="NSfFlags">16</int>
+						</object>
+						<object class="NSColor" key="IBUITextColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC45ODkxMzA0NCAwLjk4OTEzMDQ0IDAuOTg5MTMwNDQgMC4zNwA</bytes>
+						</object>
+						<nil key="IBUIHighlightedColor"/>
+						<int key="IBUIBaselineAdjustment">1</int>
+						<float key="IBUIMinimumFontSize">1.000000e+01</float>
+						<int key="IBUITextAlignment">1</int>
+					</object>
 				</object>
 				<string key="NSFrameSize">{480, 300}</string>
 				<reference key="NSSuperview"/>
@@ -391,6 +414,70 @@
 					</object>
 					<int key="connectionID">125</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">pile1Ctl</string>
+						<reference key="source" ref="774585933"/>
+						<reference key="destination" ref="31101144"/>
+					</object>
+					<int key="connectionID">127</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">pile2Ctl</string>
+						<reference key="source" ref="774585933"/>
+						<reference key="destination" ref="31101144"/>
+					</object>
+					<int key="connectionID">128</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">pile3Ctl</string>
+						<reference key="source" ref="774585933"/>
+						<reference key="destination" ref="31101144"/>
+					</object>
+					<int key="connectionID">129</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">pile4Ctl</string>
+						<reference key="source" ref="774585933"/>
+						<reference key="destination" ref="31101144"/>
+					</object>
+					<int key="connectionID">130</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">pile1Ctl</string>
+						<reference key="source" ref="31101144"/>
+						<reference key="destination" ref="238469276"/>
+					</object>
+					<int key="connectionID">131</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">pile2Ctl</string>
+						<reference key="source" ref="31101144"/>
+						<reference key="destination" ref="661919706"/>
+					</object>
+					<int key="connectionID">132</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">pile3Ctl</string>
+						<reference key="source" ref="31101144"/>
+						<reference key="destination" ref="154488500"/>
+					</object>
+					<int key="connectionID">133</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">pile4Ctl</string>
+						<reference key="source" ref="31101144"/>
+						<reference key="destination" ref="356294598"/>
+					</object>
+					<int key="connectionID">134</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -433,6 +520,7 @@
 							<reference ref="558855460"/>
 							<reference ref="306388565"/>
 							<reference ref="271035274"/>
+							<reference ref="930347220"/>
 						</object>
 						<reference key="parent" ref="1021228223"/>
 					</object>
@@ -506,6 +594,11 @@
 						<reference key="object" ref="271035274"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">126</int>
+						<reference key="object" ref="930347220"/>
+						<reference key="parent" ref="774585933"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -524,6 +617,7 @@
 					<string>103.IBPluginDependency</string>
 					<string>104.CustomClassName</string>
 					<string>104.IBPluginDependency</string>
+					<string>126.IBPluginDependency</string>
 					<string>23.CustomClassName</string>
 					<string>23.IBPluginDependency</string>
 					<string>24.CustomClassName</string>
@@ -559,6 +653,7 @@
 					<string>RowStackView</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>RowStackView</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>SuitStackView</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -603,7 +698,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">125</int>
+			<int key="maxID">134</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -657,10 +752,10 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>GameView</string>
 							<string>SolitaireViewController</string>
-							<string>CardView</string>
-							<string>CardView</string>
-							<string>CardView</string>
-							<string>CardView</string>
+							<string>SuitStackView</string>
+							<string>SuitStackView</string>
+							<string>SuitStackView</string>
+							<string>SuitStackView</string>
 							<string>RowStackView</string>
 							<string>RowStackView</string>
 							<string>RowStackView</string>

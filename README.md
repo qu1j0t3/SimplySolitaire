@@ -1,10 +1,10 @@
 SimplySolitaire, for iOS
 ------------------------
-Status: not complete
-Home page: <http://telegraphics.com.au/sw/product/SimplySolitaire> (coming soon)
-Compatibility: iOS 2.2.1 and later
-License: GPL v2
+Status: This is alpha code and not yet playable.
 
+Home page: <http://telegraphics.com.au/sw/product/SimplySolitaire> (coming soon)
+
+Compatibility: iOS 2.2.1 and later
 Project file is compatible with Xcode 3.1.4.
 
 Card images obtained from <http://www.jfitz.com/cards/>

@@ -66,7 +66,8 @@
 - (void)dropCard:(Card*)c on:(StackView*)pile {
 	[pile dropCard:c];
 	[mainCtlr dealCard:self];
-}	
+}
+
 /*
 - (void)animDidStop:(NSString*)animId finished:(NSNumber*)fin context:(void*)ctx {
 	[self dropCard:dragCard on:targ];

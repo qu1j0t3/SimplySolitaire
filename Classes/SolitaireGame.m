@@ -45,6 +45,7 @@
 
 - (Card*)dealCard {
 	if([gameDeck cards] == 0){
+		[gameDeck release];
 		gameDeck = discards;
 		discards = [[Deck alloc] init];
 	}

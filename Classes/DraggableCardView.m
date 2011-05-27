@@ -89,6 +89,7 @@
 }*/
 
 - (void)resetDrag {
+	dragging = false;
 	self.transform = CGAffineTransformIdentity;
 	self.alpha = 1;
 	[gameView highlightPile:nil];
@@ -96,40 +97,71 @@
 
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)evt {
 	UITouch *touch = [touches anyObject];
-
+	CGPoint loc = [touch locationInView:gameView];
+	
 	if(card != nil){
-		[self animateFirstTouchAt:[touch locationInView:gameView]];
+		dragStart = evt.timestamp;
+		dragStartLoc = loc;
+		[self animateFirstTouchAt:loc];
+		dragging = true;
 	}
 }
 
 - (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)evt {
-	UITouch *touch = [touches anyObject];
-	CGPoint loc = [touch locationInView:gameView];
-	StackView *target = [self hitPile:loc];
+	if(dragging){
+		UITouch *touch = [touches anyObject];
+		CGPoint loc = [touch locationInView:gameView];
+		StackView *target = [self hitPile:loc];
 
-	self.transform = [self makeTransform:loc];
-	if(target && ![target canDrop:card])
-		target = nil;
-	[gameView highlightPile:target];
+		self.transform = [self makeTransform:loc];
+		if(target && ![target canDrop:card])
+			target = nil;
+		[gameView highlightPile:target];
+	}
 }
 
 - (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)evt {
-	UITouch *touch = [touches anyObject];
-	CGPoint loc = [touch locationInView:gameView];
-	targetPile = [self hitPile:loc];
-	dragCard = [self card];
-	
-	if(targetPile && [targetPile canDrop:dragCard]){
-		[gameView highlightPile:nil]; // reset here, because in row stacks, rectangle changes when card added
-		[self dropCard:dragCard on:targetPile];
-		//[self animateDropAt:[touch locationInView:gameView]];
-	}
+	if(dragging){
+		UITouch *touch = [touches anyObject];
+		CGPoint loc = [touch locationInView:gameView];
+		targetPile = [self hitPile:loc];
+		dragCard = [self card];
+		CGFloat dx = loc.x - dragStartLoc.x,
+				dy = loc.y - dragStartLoc.y;
+		
+		// was it dropped directly on a card?
+		if(targetPile && [targetPile canDrop:dragCard]){
+			[gameView highlightPile:nil]; // reset here, because in row stacks, rectangle changes when card added
+			[self dropCard:dragCard on:targetPile];
+			//[self animateDropAt:[touch locationInView:gameView]];
+		} // or was it a 'toss'?
+		else if((evt.timestamp - dragStart) < .4 && (dx*dx + dy*dy) > 50*50){
+			// work out toss direction; is it within a certain angle range, and to the right?
+			if(fabs(atan2(dy, dx)) < .25 && dx > 0){ // .25 radians = ~ 14 degrees +/- horizontal
+				// find the closest suitable pile
+				if([pile1Ctl canDrop:dragCard])
+					targetPile = pile1Ctl;
+				else if([pile2Ctl canDrop:dragCard])
+					targetPile = pile2Ctl;
+				else if([pile3Ctl canDrop:dragCard])
+					targetPile = pile3Ctl;
+				else if([pile4Ctl canDrop:dragCard])
+					targetPile = pile4Ctl;
+				else
+					targetPile = nil;
 
-	[self resetDrag];
+				if(targetPile)
+					[self dropCard:dragCard on:targetPile];
+			}
+		}
+
+		[self resetDrag];
+	}
 }
 
 - (void)touchesCancelled:(NSSet*)touches withEvent:(UIEvent*)evt {
-	[self resetDrag];
+	if(dragging)
+		[self resetDrag];
 }
 
 @end

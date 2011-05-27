@@ -23,6 +23,8 @@
 		DA432B0E138B332F002D1052 /* StackView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA432B0D138B332F002D1052 /* StackView.m */; };
 		DA432B11138B3547002D1052 /* SuitStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA432B10138B3547002D1052 /* SuitStackView.m */; };
 		DA432C4E138C8570002D1052 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DA432C4D138C8570002D1052 /* README.md */; };
+		DA432CB5138DFCD8002D1052 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA432CB4138DFCD8002D1052 /* CircleView.m */; };
+		DA432CBA138DFD23002D1052 /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = DA432CB9138DFD23002D1052 /* Circle.m */; };
 		DA8140D3137EF67C00E0E0EC /* card-1-1.png in Resources */ = {isa = PBXBuildFile; fileRef = DA81409F137EF67C00E0E0EC /* card-1-1.png */; };
 		DA8140D4137EF67C00E0E0EC /* card-1-2.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140A0137EF67C00E0E0EC /* card-1-2.png */; };
 		DA8140D5137EF67C00E0E0EC /* card-1-3.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8140A1137EF67C00E0E0EC /* card-1-3.png */; };
@@ -110,6 +112,10 @@
 		DA432B0F138B3547002D1052 /* SuitStackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuitStackView.h; sourceTree = "<group>"; };
 		DA432B10138B3547002D1052 /* SuitStackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuitStackView.m; sourceTree = "<group>"; };
 		DA432C4D138C8570002D1052 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		DA432CB3138DFCD8002D1052 /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
+		DA432CB4138DFCD8002D1052 /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
+		DA432CB8138DFD23002D1052 /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
+		DA432CB9138DFD23002D1052 /* Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Circle.m; sourceTree = "<group>"; };
 		DA81409F137EF67C00E0E0EC /* card-1-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-1-1.png"; sourceTree = "<group>"; };
 		DA8140A0137EF67C00E0E0EC /* card-1-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-1-2.png"; sourceTree = "<group>"; };
 		DA8140A1137EF67C00E0E0EC /* card-1-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-1-3.png"; sourceTree = "<group>"; };
@@ -217,6 +223,10 @@
 				DA432B0D138B332F002D1052 /* StackView.m */,
 				DA432B0F138B3547002D1052 /* SuitStackView.h */,
 				DA432B10138B3547002D1052 /* SuitStackView.m */,
+				DA432CB3138DFCD8002D1052 /* CircleView.h */,
+				DA432CB4138DFCD8002D1052 /* CircleView.m */,
+				DA432CB8138DFD23002D1052 /* Circle.h */,
+				DA432CB9138DFD23002D1052 /* Circle.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -454,6 +464,8 @@
 				DA432979138B1522002D1052 /* CardListNode.m in Sources */,
 				DA432B0E138B332F002D1052 /* StackView.m in Sources */,
 				DA432B11138B3547002D1052 /* SuitStackView.m in Sources */,
+				DA432CB5138DFCD8002D1052 /* CircleView.m in Sources */,
+				DA432CBA138DFD23002D1052 /* Circle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,6 +32,7 @@
 }
 
 - (bool)canDrop:(Card*)card {
+	return cardShown == nil;
 	if(cardShown)
 		return card.suit == cardShown.suit && card.value == cardShown.value + 1;
 	else

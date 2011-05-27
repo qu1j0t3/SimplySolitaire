@@ -67,8 +67,12 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	stacks[0] = stack1; stacks[1] = stack2; stacks[2] = stack3;
-	stacks[3] = stack4; stacks[4] = stack5; stacks[5] = stack6;
+	stacks[0] = stack1;
+	stacks[1] = stack2;
+	stacks[2] = stack3;
+	stacks[3] = stack4;
+	stacks[4] = stack5;
+	stacks[5] = stack6;
 	stacks[6] = stack7;
 }
 /*

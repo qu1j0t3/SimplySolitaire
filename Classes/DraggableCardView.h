@@ -33,6 +33,9 @@
 	// set after a successful drag; used by drop animation completion method
 	StackView *targetPile;
 	Card *dragCard;
+	NSTimeInterval dragStart;
+	CGPoint dragStartLoc;
+	bool dragging;
 }
 
 @end

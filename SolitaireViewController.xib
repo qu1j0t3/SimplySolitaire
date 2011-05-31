@@ -675,7 +675,6 @@
 					<string>{{15, 357}, {480, 320}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<boolean value="YES"/>
-					<boolean value="NO"/>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>RowStackView</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

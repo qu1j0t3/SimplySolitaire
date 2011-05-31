@@ -23,6 +23,8 @@
 
 @implementation DraggableCardView
 
+@synthesize dragCards;
+
 /*
 - (id)initWithCoder:(NSCoder*)coder {
     if (self = [super initWithCoder:coder]) {
@@ -30,6 +32,38 @@
     }
     return self;
 }*/
+
+- (void)setCard:(Card*)card {
+	if(dragCards == nil)
+		dragCards = [[CardListNode alloc] init]; // FIXME: move to initialiser
+	[dragCards setCard:card];
+	[self setNeedsDisplay];
+}
+
+- (void)setCard:(Card*)newCard dealtFrom:(CardView*)pack {
+	// set up an animation to reveal the new card as if it's being turned up from the facedown deck
+	
+	self.alpha = 0; // avoid flashing the un-transformed card at its original location
+	[self setCard:newCard];
+	
+	self.transform = CGAffineTransformIdentity; // so we can get the correct frame
+	self.transform = CGAffineTransformMake(
+										   .01, 0, 0, 1,
+										   (CGRectGetMaxX([pack frame]) - CGRectGetMidX([self frame])), 
+										   0);
+	self.alpha = 1;
+	
+	[UIView beginAnimations:nil context:nil];
+	[UIView setAnimationDuration:.33];
+	[UIView setAnimationDelegate:self];
+	self.transform = CGAffineTransformIdentity;
+	[UIView commitAnimations];
+}
+
+- (void)setDragCards:(CardListNode*)cards {
+	dragCards = cards;
+	[self setNeedsDisplay];
+}
 
 - (StackView*)hitPile:(CGPoint)loc {
 	if(CGRectContainsPoint(pile1Ctl.frame, loc)) return pile1Ctl;
@@ -88,18 +122,24 @@
     [UIView commitAnimations];
 }*/
 
+- (void)drawRect:(CGRect)r {
+	[dragCards drawInRect:[self bounds]];
+}
+
 - (void)resetDrag {
 	dragging = false;
 	self.transform = CGAffineTransformIdentity;
 	self.alpha = 1;
 	[gameView highlightPile:nil];
+	[self setNeedsDisplay];
 }
 
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)evt {
 	UITouch *touch = [touches anyObject];
 	CGPoint loc = [touch locationInView:gameView];
 	
-	if(card != nil){
+	if(dragCards && [dragCards card]){
+		[gameView bringSubviewToFront:self];
 		dragStart = evt.timestamp;
 		dragStartLoc = loc;
 		[self animateFirstTouchAt:loc];
@@ -114,7 +154,7 @@
 		StackView *target = [self hitPile:loc];
 
 		self.transform = [self makeTransform:loc];
-		if(target && ![target canDrop:card])
+		if(target && ![target canDrop:[dragCards card]])
 			target = nil;
 		[gameView highlightPile:target];
 	}
@@ -125,7 +165,7 @@
 		UITouch *touch = [touches anyObject];
 		CGPoint loc = [touch locationInView:gameView];
 		targetPile = [self hitPile:loc];
-		dragCard = [self card];
+		Card *dragCard = [dragCards card];
 		CGFloat dx = loc.x - dragStartLoc.x,
 				dy = loc.y - dragStartLoc.y;
 		

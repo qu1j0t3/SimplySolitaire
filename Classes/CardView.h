@@ -28,7 +28,5 @@
 
 - (Card*)card;
 - (void)setCard:(Card*)newCard;
-- (void)setCard:(Card*)newCard dealtFrom:(CardView*)pack;
-- (bool)canDrop:(Card*)card;
 
 @end

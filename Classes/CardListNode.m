@@ -25,4 +25,31 @@
 @synthesize card;
 @synthesize next;
 
+// vertical distance between this card and the card on top
+#define CARD_OFFSET 15
+
+- (void)drawInRect:(CGRect)r {
+	[[self card] drawInRect:r];
+	if(next)
+		[next drawInRect:CGRectOffset(r, 0, CARD_OFFSET)];
+}
+
+- (CGRect)nextCardRect:(CGRect)myRect {
+	return next ? [next nextCardRect:CGRectOffset(myRect, 0, CARD_OFFSET)]
+				: CGRectInset(myRect, -6, -6);
+}
+
+- (CardListNode*)hitTest:(CGPoint)pt inRect:(CGRect)r belowHit:(CardListNode*)node {
+	CGRect r2 = CGRectOffset(r, 0, CARD_OFFSET);
+	
+	if(next) // need to check all cards on top of this one:
+		return [next hitTest:pt inRect:r2 belowHit:(CGRectContainsPoint(r, pt) ? self : node)];
+	else
+		return node;
+}
+
+- (CardListNode*)hitTest:(CGPoint)pt inRect:(CGRect)r {
+	return [self hitTest:pt inRect:r belowHit:nil];
+}
+
 @end

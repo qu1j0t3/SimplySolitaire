@@ -30,26 +30,6 @@
 	[self setNeedsDisplay];
 }
 
-- (void)setCard:(Card*)newCard dealtFrom:(CardView*)pack {
-	// set up an animation to reveal the new card as if it's being turned up from the facedown deck
-
-	self.alpha = 0; // avoid flashing the un-transformed card at its original location
-	[self setCard:newCard];
-
-	self.transform = CGAffineTransformIdentity; // so we can get the correct frame
-	self.transform = CGAffineTransformMake(
-			.01, 0, 0, 1,
-			(CGRectGetMaxX([pack frame]) - CGRectGetMidX([self frame])), 
-			0);
-	self.alpha = 1;
-
-	[UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDuration:.33];
-	[UIView setAnimationDelegate:self];
-	self.transform = CGAffineTransformIdentity;
-	[UIView commitAnimations];
-}
-
 - (void)drawRect:(CGRect)rect {
     if(card){
 		// TODO: draw a shadow if being dragged

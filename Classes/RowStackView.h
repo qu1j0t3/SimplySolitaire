@@ -24,13 +24,18 @@
 #import "CardListNode.h"
 #import "StackView.h"
 
+@class DraggableCardView;
+
 @interface RowStackView : StackView {
 	Deck *faceDownDeck;
 	CardListNode *stack; // points to bottom face up card
 	CardListNode *topCard; // points to top face up card
+	DraggableCardView *draggableCard; // card list being dragged
 }
 
-- (Deck*)faceDownDeck;
+@property (nonatomic, retain) Deck *faceDownDeck;
+@property (nonatomic, retain) DraggableCardView *draggableCard;
+
 - (void)addFaceUpCard:(Card*)card;
 
 @end

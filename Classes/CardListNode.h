@@ -22,6 +22,8 @@
 
 #import "Card.h"
 
+// A CardListNode is a pointer to the bottom card of a face-up card pile.
+
 @interface CardListNode : NSObject {
 	Card *card;
 	CardListNode *next; // points to card on top of this one
@@ -29,5 +31,9 @@
 
 @property (nonatomic, retain) Card *card;
 @property (nonatomic, retain) CardListNode *next;
+
+- (void)drawInRect:(CGRect)r;
+- (CGRect)nextCardRect:(CGRect)bottomCardRect;
+- (CardListNode*)hitTest:(CGPoint)pt inRect:(CGRect)r;
 
 @end

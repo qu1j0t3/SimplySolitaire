@@ -19,8 +19,13 @@
 //  Created by Toby Thain on 5/23/11.
 
 #import "RowStackView.h"
+#import "DraggableCardView.h"
 
 @implementation RowStackView
+
+@synthesize faceDownDeck;
+@synthesize draggableCard;
+
 
 - (id)initWithCoder:(NSCoder*)coder {
 	if(self = [super initWithCoder:coder]){
@@ -29,23 +34,22 @@
 	return self;
 }
 
-- (Deck*)faceDownDeck {
-	return faceDownDeck;
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+	// default returns YES if point is in bounds
+	// recursively calls -pointInside:withEvent:. point is in frame coordinates
+	return [stack hitTest:point inRect:[self frame]] != nil;
 }
 
 - (void)drawRect:(CGRect)r {
 	CGRect r2 = [self bounds];
-	CardListNode *c;
 	int i;
 	
 	for(i = [faceDownDeck cards]; i--;){
 		[Card drawFaceDownInRect:r2];
 		r2 = CGRectOffset(r2, 0, 5);
 	}
-	for(c = stack; c; c = [c next]){
-		[[c card] drawInRect:r2];
-		r2 = CGRectOffset(r2, 0, 15);
-	}
+
+	[stack drawInRect:r2];
 }
 
 - (void)addFaceUpCard:(Card*)card {
@@ -54,27 +58,24 @@
 	[newCard setCard:card];
 
 	// add to linked list as top card
-	if(stack){
+	if(stack)
 		[topCard setNext:newCard];
-	}else{
+	else
 		stack = newCard;
-	}
+
 	topCard = newCard;
 }
 
 - (CGRect)highlightRect {
 	CGRect r2 = CGRectOffset([Card cardRectForWidth:CGRectGetWidth([self bounds])],
 							 CGRectGetMinX([self frame]), CGRectGetMinY([self frame]));
-	CardListNode *c;
 	int i;
 
 	for(i = [faceDownDeck cards]; i--;){
 		r2 = CGRectOffset(r2, 0, 5);
 	}
-	for(c = stack; c; c = [c next]){
-		r2 = CGRectOffset(r2, 0, 15);
-	}
-	return CGRectInset(r2, -6, -6);
+
+	return [stack nextCardRect:r2];
 }
 
 - (bool)canDrop:(Card*)card {
@@ -86,6 +87,34 @@
 - (void)dropCard:(Card*)card {
 	[self addFaceUpCard:card];
 	[self setNeedsDisplay];
+}
+
+// delegate touch handling to a new instance of DraggableCardView
+
+- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)evt {
+	UITouch *touch = [touches anyObject];
+	CGPoint loc = [touch locationInView:self];
+	CardListNode *hitCardList = [stack hitTest:loc inRect:[self bounds]];
+
+	if(hitCardList){
+		draggableCard = [[DraggableCardView alloc] init];
+		[draggableCard setDragCards:hitCardList];
+		[draggableCard touchesBegan:touches withEvent:evt];
+	}
+}
+
+- (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)evt {
+	[draggableCard touchesMoved:touches withEvent:evt];
+}
+
+- (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)evt {
+	[draggableCard touchesEnded:touches withEvent:evt];
+	draggableCard = nil;
+}
+
+- (void)touchesCancelled:(NSSet*)touches withEvent:(UIEvent*)evt {
+	[draggableCard touchesCancelled:touches withEvent:evt];
+	draggableCard = nil;
 }
 
 @end

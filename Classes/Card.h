@@ -20,7 +20,6 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface Card : NSObject {
 	int suit, value;
 	UIImage *image;

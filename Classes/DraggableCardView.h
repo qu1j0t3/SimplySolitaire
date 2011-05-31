@@ -25,17 +25,25 @@
 
 @class GameView;
 
-@interface DraggableCardView : CardView {
+@interface DraggableCardView : UIView {
 	IBOutlet SuitStackView *pile1Ctl, *pile2Ctl, *pile3Ctl, *pile4Ctl;
 	IBOutlet RowStackView *stack1, *stack2, *stack3, *stack4, *stack5, *stack6, *stack7;
 	IBOutlet GameView *gameView;
 	IBOutlet SolitaireViewController *mainCtlr;
+
+	CardListNode *dragCards;
+
 	// set after a successful drag; used by drop animation completion method
 	StackView *targetPile;
-	Card *dragCard;
+
+	// used only during drag
 	NSTimeInterval dragStart;
 	CGPoint dragStartLoc;
 	bool dragging;
 }
+
+- (void)setCard:(Card*)newCard dealtFrom:(CardView*)pack;
+
+@property (nonatomic, retain) CardListNode *dragCards;
 
 @end

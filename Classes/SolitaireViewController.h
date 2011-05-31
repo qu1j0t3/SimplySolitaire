@@ -28,7 +28,8 @@
 
 @interface SolitaireViewController : UIViewController {
 	SolitaireGame *game;
-	IBOutlet CardView *deckCtl, *dealtCardCtl;
+	IBOutlet CardView *deckCtl;
+	IBOutlet DraggableCardView *dealtCardCtl;
 	IBOutlet UILabel *timerLabel;
 	IBOutlet RowStackView *stack1, *stack2, *stack3, *stack4, *stack5, *stack6, *stack7;
 	RowStackView *stacks[7];

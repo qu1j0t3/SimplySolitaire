@@ -18,6 +18,8 @@
 
 //  Created by Toby Thain on 5/15/11.
 
+#include <math.h>
+
 #import "GameView.h"
 
 @implementation GameView
@@ -42,6 +44,17 @@
 	}
 }
 
+- (void)roundRect:(CGRect)rect cornerRadius:(float)rad inContext:(CGContextRef)ctx {
+	CGRect r = CGRectInset(rect, rad, rad);
+
+	CGContextBeginPath(ctx);
+	CGContextAddArc(ctx, CGRectGetMinX(r), CGRectGetMaxY(r), rad, M_PI, M_PI/2, YES);
+	CGContextAddArc(ctx, CGRectGetMaxX(r), CGRectGetMaxY(r), rad, M_PI/2, 0, YES);
+	CGContextAddArc(ctx, CGRectGetMaxX(r), CGRectGetMinY(r), rad, 0, -M_PI/2, YES);
+	CGContextAddArc(ctx, CGRectGetMinX(r), CGRectGetMinY(r), rad, -M_PI/2, -M_PI, YES);
+	CGContextClosePath(ctx);
+}
+
 - (void)drawRect:(CGRect)rect {
 	[super drawRect:rect];
 
@@ -60,8 +73,11 @@
 		CGRect r = CGRectInset([highlightedPile highlightRect], 3, 3);
 		
 		CGContextRef ctx = UIGraphicsGetCurrentContext();
-		CGContextSetRGBStrokeColor(ctx, 1, 1, 1, 1);
-		CGContextStrokeRectWithWidth(ctx, r, 3.0);
+		CGContextSetRGBStrokeColor(ctx, 1, 1, 1, .8);
+		//CGContextStrokeRectWithWidth(ctx, r, 3.0);
+		[self roundRect:r cornerRadius:6 inContext:ctx];
+		CGContextSetLineWidth(ctx, 5);
+		CGContextStrokePath(ctx);
 	}
 }
 

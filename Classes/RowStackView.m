@@ -26,7 +26,6 @@
 @synthesize faceDownDeck;
 @synthesize draggableCard;
 
-
 - (id)initWithCoder:(NSCoder*)coder {
 	if(self = [super initWithCoder:coder]){
 		faceDownDeck = [[Deck alloc] init];
@@ -34,10 +33,10 @@
 	return self;
 }
 
-- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent*)event {
 	// default returns YES if point is in bounds
 	// recursively calls -pointInside:withEvent:. point is in frame coordinates
-	return [stack hitTest:point inRect:[self frame]] != nil;
+	return [faceUpCards hitTest:point inRect:[self bounds]] != nil;
 }
 
 - (void)drawRect:(CGRect)r {
@@ -49,7 +48,9 @@
 		r2 = CGRectOffset(r2, 0, 5);
 	}
 
-	[stack drawInRect:r2];
+	// if draggableCard is set, then only cards UNDER it will be drawn. This causes the dragged
+	// cards to "disappear" from the row stack during dragging.
+	[faceUpCards drawInRect:r2 cardsUnder:[draggableCard dragCards]];
 }
 
 - (void)addFaceUpCard:(Card*)card {
@@ -58,10 +59,10 @@
 	[newCard setCard:card];
 
 	// add to linked list as top card
-	if(stack)
+	if(faceUpCards)
 		[topCard setNext:newCard];
 	else
-		stack = newCard;
+		faceUpCards = newCard;
 
 	topCard = newCard;
 }
@@ -71,15 +72,15 @@
 							 CGRectGetMinX([self frame]), CGRectGetMinY([self frame]));
 	int i;
 
-	for(i = [faceDownDeck cards]; i--;){
+	for(i = [faceDownDeck cards]; i--;)
 		r2 = CGRectOffset(r2, 0, 5);
-	}
 
-	return [stack nextCardRect:r2];
+	return [faceUpCards nextCardRect:r2];
 }
 
+// return whether the given card can be dropped on this stack, according to game rules
 - (bool)canDrop:(Card*)card {
-	return (!stack && [card value] == 13)
+	return (!faceUpCards && [card value] == 13)
 		|| ([card value] == [[topCard card] value] - 1
 			&& (([card suit] > 2) != ([[topCard card] suit] > 2)));
 }
@@ -91,30 +92,42 @@
 
 // delegate touch handling to a new instance of DraggableCardView
 
+- (void)resetDrag {
+	if(draggableCard)
+		[draggableCard removeFromSuperview];
+	draggableCard = nil;
+	[self setNeedsDisplay];
+}
+
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)evt {
 	UITouch *touch = [touches anyObject];
 	CGPoint loc = [touch locationInView:self];
-	CardListNode *hitCardList = [stack hitTest:loc inRect:[self bounds]];
+	CardListNode *hitCardList = [faceUpCards hitTest:loc inRect:[self bounds]];
 
 	if(hitCardList){
 		draggableCard = [[DraggableCardView alloc] init];
 		[draggableCard setDragCards:hitCardList];
+		[self addSubview:draggableCard];
 		[draggableCard touchesBegan:touches withEvent:evt];
+		[self setNeedsDisplay];
 	}
 }
 
 - (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)evt {
-	[draggableCard touchesMoved:touches withEvent:evt];
+	if(draggableCard)
+		[draggableCard touchesMoved:touches withEvent:evt];
 }
 
 - (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)evt {
-	[draggableCard touchesEnded:touches withEvent:evt];
-	draggableCard = nil;
+	if(draggableCard)
+		[draggableCard touchesEnded:touches withEvent:evt];
+	[self resetDrag];
 }
 
 - (void)touchesCancelled:(NSSet*)touches withEvent:(UIEvent*)evt {
-	[draggableCard touchesCancelled:touches withEvent:evt];
-	draggableCard = nil;
+	if(draggableCard)
+		[draggableCard touchesCancelled:touches withEvent:evt];
+	[self resetDrag];
 }
 
 @end

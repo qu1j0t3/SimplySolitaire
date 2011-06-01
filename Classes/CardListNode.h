@@ -32,6 +32,7 @@
 @property (nonatomic, retain) Card *card;
 @property (nonatomic, retain) CardListNode *next;
 
+- (void)drawInRect:(CGRect)r cardsUnder:(CardListNode*)draggedCard;
 - (void)drawInRect:(CGRect)r;
 - (CGRect)nextCardRect:(CGRect)bottomCardRect;
 - (CardListNode*)hitTest:(CGPoint)pt inRect:(CGRect)r;

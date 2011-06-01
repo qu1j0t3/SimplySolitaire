@@ -28,7 +28,7 @@
 
 @interface RowStackView : StackView {
 	Deck *faceDownDeck;
-	CardListNode *stack; // points to bottom face up card
+	CardListNode *faceUpCards; // points to bottom face up card
 	CardListNode *topCard; // points to top face up card
 	DraggableCardView *draggableCard; // card list being dragged
 }

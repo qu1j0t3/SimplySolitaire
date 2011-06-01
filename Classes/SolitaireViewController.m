@@ -23,6 +23,7 @@
 #import "Deck.h"
 #import "SolitaireGame.h"
 #import "GameView.h"
+#import "DraggableCardView.h"
 
 @implementation SolitaireViewController
 

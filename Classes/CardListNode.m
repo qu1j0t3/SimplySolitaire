@@ -28,24 +28,29 @@
 // vertical distance between this card and the card on top
 #define CARD_OFFSET 15
 
-- (void)drawInRect:(CGRect)r {
+- (void)drawInRect:(CGRect)r cardsUnder:(CardListNode*)draggedCard {
 	[[self card] drawInRect:r];
-	if(next)
+	if(next && next != draggedCard) // don't draw cards that are being dragged
 		[next drawInRect:CGRectOffset(r, 0, CARD_OFFSET)];
 }
 
+- (void)drawInRect:(CGRect)r {
+	[self drawInRect:r cardsUnder:nil];
+}
+
 - (CGRect)nextCardRect:(CGRect)myRect {
-	return next ? [next nextCardRect:CGRectOffset(myRect, 0, CARD_OFFSET)]
-				: CGRectInset(myRect, -6, -6);
+	CGRect r = CGRectOffset(myRect, 0, CARD_OFFSET);
+	return next ? [next nextCardRect:r]
+				: CGRectInset(r, -6, -6);
 }
 
 - (CardListNode*)hitTest:(CGPoint)pt inRect:(CGRect)r belowHit:(CardListNode*)node {
-	CGRect r2 = CGRectOffset(r, 0, CARD_OFFSET);
+	CardListNode *hitMe = CGRectContainsPoint(r, pt) ? self : node;
 	
 	if(next) // need to check all cards on top of this one:
-		return [next hitTest:pt inRect:r2 belowHit:(CGRectContainsPoint(r, pt) ? self : node)];
+		return [next hitTest:pt inRect:CGRectOffset(r, 0, CARD_OFFSET) belowHit:hitMe];
 	else
-		return node;
+		return hitMe;
 }
 
 - (CardListNode*)hitTest:(CGPoint)pt inRect:(CGRect)r {

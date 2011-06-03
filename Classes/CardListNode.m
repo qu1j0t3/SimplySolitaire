@@ -29,9 +29,12 @@
 #define CARD_OFFSET 15
 
 - (void)drawInRect:(CGRect)r cardsUnder:(CardListNode*)draggedCard {
-	[[self card] drawInRect:r];
-	if(next && next != draggedCard) // don't draw cards that are being dragged
-		[next drawInRect:CGRectOffset(r, 0, CARD_OFFSET)];
+	// don't draw cards that are being dragged
+	if(self != draggedCard){
+		[[self card] drawInRect:r];
+		if(next)
+			[next drawInRect:CGRectOffset(r, 0, CARD_OFFSET)];
+	}
 }
 
 - (void)drawInRect:(CGRect)r {

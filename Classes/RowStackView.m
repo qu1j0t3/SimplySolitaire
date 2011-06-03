@@ -26,6 +26,9 @@
 @synthesize faceDownDeck;
 @synthesize draggableCard;
 
+// the vertical distance between face-down cards in the row stack
+#define FACEDOWN_OFFSET 5
+
 - (id)initWithCoder:(NSCoder*)coder {
 	if(self = [super initWithCoder:coder]){
 		faceDownDeck = [[Deck alloc] init];
@@ -39,13 +42,18 @@
 	return [faceUpCards hitTest:point inRect:[self bounds]] != nil;
 }
 
+- (CGRect)topCardRectFor:(CGRect)r {
+	return CGRectOffset([Card cardRectForWidth:CGRectGetWidth([self bounds])],
+						CGRectGetMinX(r), CGRectGetMinY(r));
+}
+
 - (void)drawRect:(CGRect)r {
-	CGRect r2 = [self bounds];
+	CGRect r2 = [self topCardRectFor:[self bounds]];
 	int i;
 	
 	for(i = [faceDownDeck cards]; i--;){
 		[Card drawFaceDownInRect:r2];
-		r2 = CGRectOffset(r2, 0, 5);
+		r2 = CGRectOffset(r2, 0, FACEDOWN_OFFSET);
 	}
 
 	// if draggableCard is set, then only cards UNDER it will be drawn. This causes the dragged
@@ -68,14 +76,9 @@
 }
 
 - (CGRect)highlightRect {
-	CGRect r2 = CGRectOffset([Card cardRectForWidth:CGRectGetWidth([self bounds])],
-							 CGRectGetMinX([self frame]), CGRectGetMinY([self frame]));
-	int i;
-
-	for(i = [faceDownDeck cards]; i--;)
-		r2 = CGRectOffset(r2, 0, 5);
-
-	return [faceUpCards nextCardRect:r2];
+	return [faceUpCards nextCardRect:
+				CGRectOffset([self topCardRectFor:[self frame]],
+							 0, [faceDownDeck cards]*FACEDOWN_OFFSET)];
 }
 
 // return whether the given card can be dropped on this stack, according to game rules
@@ -102,7 +105,9 @@
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)evt {
 	UITouch *touch = [touches anyObject];
 	CGPoint loc = [touch locationInView:self];
-	CardListNode *hitCardList = [faceUpCards hitTest:loc inRect:[self bounds]];
+	CGRect r2 = CGRectOffset([self topCardRectFor:[self bounds]],
+							 0, [faceDownDeck cards]*FACEDOWN_OFFSET);
+	CardListNode *hitCardList = [faceUpCards hitTest:loc inRect:r2];
 
 	if(hitCardList){
 		draggableCard = [[DraggableCardView alloc] init];

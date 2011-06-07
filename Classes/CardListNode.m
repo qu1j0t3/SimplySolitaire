@@ -33,7 +33,7 @@
 	if(self != draggedCard){
 		[[self card] drawInRect:r];
 		if(next)
-			[next drawInRect:CGRectOffset(r, 0, CARD_OFFSET)];
+			[next drawInRect:CGRectOffset(r, 0, CARD_OFFSET) cardsUnder:draggedCard];
 	}
 }
 

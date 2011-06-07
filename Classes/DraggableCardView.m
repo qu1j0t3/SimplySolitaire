@@ -139,11 +139,11 @@
 	CGPoint loc = [touch locationInView:gameView];
 	
 	if(dragCards && [dragCards card]){
+		dragging = true;
 		[gameView bringSubviewToFront:self];
 		dragStart = evt.timestamp;
 		dragStartLoc = loc;
 		[self animateFirstTouchAt:loc];
-		dragging = true;
 	}
 }
 

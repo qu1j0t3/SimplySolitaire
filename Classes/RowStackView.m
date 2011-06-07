@@ -110,11 +110,14 @@
 	CardListNode *hitCardList = [faceUpCards hitTest:loc inRect:r2];
 
 	if(hitCardList){
-		draggableCard = [[DraggableCardView alloc] init];
+		CGRect dragFrame = CGRectOffset([self topCardRectFor:[self frame]],
+										0, [faceDownDeck cards]*FACEDOWN_OFFSET);
+		draggableCard = [[DraggableCardView alloc] initWithFrame:dragFrame];
+		[draggableCard setOpaque:NO];
 		[draggableCard setDragCards:hitCardList];
-		[self addSubview:draggableCard];
+		[gameView addSubview:draggableCard];
 		[draggableCard touchesBegan:touches withEvent:evt];
-		[self setNeedsDisplay];
+		[self setNeedsDisplay]; // to hide the cards that are being dragged
 	}
 }
 
